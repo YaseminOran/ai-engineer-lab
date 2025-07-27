@@ -19,13 +19,15 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 
 **Proje:** [sentiment-analysis-api](./sentiment-analysis-api/)
 
-### 🔄 Hafta 2: Model Deployment – FastAPI + Docker
-- [ ] Docker nedir, ne işe yarar? Temel mimariyi öğren
-- [ ] Basit bir Dockerfile oluştur ve API uygulamasını konteynerleştir
-- [ ] Docker üzerinden servisi ayağa kaldır (port yönlendirmesi dahil)
-- [ ] .env dosyası kullanarak config yönetimi yap
-- [ ] Docker Compose ile servis yapılandırmasını otomatize et
-- [ ] Terminalden log izleme ve hata ayıklama pratiği yap
+### ✅ Hafta 2: Model Deployment – FastAPI + Docker
+- [x] Docker nedir, ne işe yarar? Temel mimariyi öğren
+- [x] Basit bir Dockerfile oluştur ve API uygulamasını konteynerleştir
+- [x] Docker üzerinden servisi ayağa kaldır (port yönlendirmesi dahil)
+- [x] .env dosyası kullanarak config yönetimi yap
+- [x] Docker Compose ile servis yapılandırmasını otomatize et
+- [x] Terminalden log izleme ve hata ayıklama pratiği yap
+
+**Proje:** [docker-learning-project](./docker-learning-project/)
 
 ### 🔄 Hafta 3: MLOps Girişi – MLflow ile Deney Takibi
 - [ ] ML lifecycle aşamalarını öğren (training, validation, deployment, monitoring)
@@ -59,8 +61,6 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 - [ ] FastAPI ile CORS, rate limiting, hata yönetimi gibi güvenlik önlemleri ekle
 - [ ] Docker ile versiyonlanabilir ve izlenebilir dağıtım yapısı kur
 
-
-
 ## 🛠️ Kullanılan Teknolojiler
 
 ### Backend & API
@@ -75,6 +75,7 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 
 ### Deployment & DevOps
 - **Docker** - Konteynerleştirme
+- **Docker Compose** - Multi-service orchestration
 - **Git** - Versiyon kontrolü
 - **GitHub** - Kod hosting
 
@@ -98,11 +99,26 @@ ai-engineer-lab/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── README.md
-├── [gelecek-proje-1]/         # Hafta 2: Docker Deployment
-├── [gelecek-proje-2]/         # Hafta 3: MLflow
-├── [gelecek-proje-3]/         # Hafta 4: RAG System
-├── [gelecek-proje-4]/         # Hafta 5: Agent Systems
-├── [gelecek-proje-5]/         # Hafta 6: CI/CD
+├── docker-learning-project/    # Hafta 2: Docker Deployment
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   └── database.py
+│   ├── docker/
+│   │   ├── Dockerfile
+│   │   └── docker-compose.yml
+│   ├── scripts/
+│   │   ├── build.sh
+│   │   ├── run.sh
+│   │   └── logs.sh
+│   ├── docs/
+│   │   ├── docker-basics.md
+│   │   └── troubleshooting.md
+│   └── README.md
+├── [gelecek-proje-1]/         # Hafta 3: MLflow
+├── [gelecek-proje-2]/         # Hafta 4: RAG System
+├── [gelecek-proje-3]/         # Hafta 5: Agent Systems
+├── [gelecek-proje-4]/         # Hafta 6: CI/CD
 └── README.md                   # Bu dosya
 ```
 
