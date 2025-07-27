@@ -99,7 +99,11 @@ ai-engineer-lab/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── README.md
+<<<<<<< HEAD
 ├── docker-learning-project/    # Hafta 2: Docker Learning Project
+=======
+├── docker-learning-project/    # Hafta 2: Docker Deployment
+>>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 │   ├── app/
 │   │   ├── main.py
 │   │   ├── models.py
@@ -107,8 +111,11 @@ ai-engineer-lab/
 │   ├── docker/
 │   │   ├── Dockerfile
 │   │   └── docker-compose.yml
+<<<<<<< HEAD
 │   ├── config/
 │   │   └── env.example
+=======
+>>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 │   ├── scripts/
 │   │   ├── build.sh
 │   │   ├── run.sh
@@ -116,12 +123,20 @@ ai-engineer-lab/
 │   ├── docs/
 │   │   ├── docker-basics.md
 │   │   └── troubleshooting.md
+<<<<<<< HEAD
 │   ├── requirements.txt
 │   └── README.md
 ├── [gelecek-proje-3]/         # Hafta 3: MLflow
 ├── [gelecek-proje-4]/         # Hafta 4: RAG System
 ├── [gelecek-proje-5]/         # Hafta 5: Agent Systems
 ├── [gelecek-proje-6]/         # Hafta 6: CI/CD
+=======
+│   └── README.md
+├── [gelecek-proje-1]/         # Hafta 3: MLflow
+├── [gelecek-proje-2]/         # Hafta 4: RAG System
+├── [gelecek-proje-3]/         # Hafta 5: Agent Systems
+├── [gelecek-proje-4]/         # Hafta 6: CI/CD
+>>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 └── README.md                   # Bu dosya
 ```
 
