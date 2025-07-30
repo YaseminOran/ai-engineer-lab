@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # MLflow Tracking Server
+  mlflow:
+    image: python:3.10-slim
+    container_name: iris-mlflow
+    working_dir: /app
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./mlflow:/app/mlflow
+      - ./data:/app/data
+    environment:
+      - MLFLOW_TRACKING_URI=http://localhost:5001
+    command: >
+      bash -c "
+        pip install mlflow &&
+        mlflow server
+          --host 0.0.0.0
+          --port 5001
+          --backend-store-uri sqlite:///mlflow.db
+          --default-artifact-root ./mlflow/artifacts
+      "
+    networks:
+      - iris-network
+
+  # FastAPI Application
+  iris-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: iris-api
+    ports:
+      - "8006:8006"
+    volumes:
+      - ../data:/app/data
+      - ../mlflow:/app/mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5001
+      - MODEL_NAME=iris_classifier
+      - API_PORT=8006
+    depends_on:
+      - mlflow
+    networks:
+      - iris-network
+    restart: unless-stopped
+
+  # PostgreSQL (Optional - for production)
+  postgres:
+    image: postgres:13
+    container_name: iris-postgres
+    environment:
+      POSTGRES_DB: mlflow
+      POSTGRES_USER: mlflow
+      POSTGRES_PASSWORD: mlflow123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - iris-network
+    profiles:
+      - production
+
+  # Redis (Optional - for caching)
+  redis:
+    image: redis:6-alpine
+    container_name: iris-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - iris-network
+    profiles:
+      - production
+
+  # Jupyter Notebook (Optional - for development)
+  jupyter:
+    image: jupyter/minimal-notebook:latest
+    container_name: iris-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../notebooks:/home/jovyan/work
+      - ../data:/home/jovyan/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start.sh jupyter lab --LabApp.token=''
+    networks:
+      - iris-network
+    profiles:
+      - development
+
+volumes:
+  postgres_data:
+
+networks:
+  iris-network:
+    driver: bridge 
