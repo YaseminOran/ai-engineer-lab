@@ -29,13 +29,17 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 
 **Proje:** [docker-learning-project](./docker-learning-project/)
 
-### 🔄 Hafta 3: MLOps Girişi – MLflow ile Deney Takibi
-- [ ] ML lifecycle aşamalarını öğren (training, validation, deployment, monitoring)
-- [ ] MLflow kurulumu ve local UI başlatmayı öğren
-- [ ] Sklearn ile küçük bir model eğitip log_params, log_metrics ile izlemeyi dene
-- [ ] Modelin farklı versiyonlarını karşılaştır
-- [ ] mlflow.log_artifact() ile model ve görselleri kaydet
-- [ ] MLflow UI üzerinden geçmiş deneyleri analiz et
+### ✅ Hafta 3: MLOps Girişi – MLflow ile Deney Takibi
+- [x] ML lifecycle aşamalarını öğren (training, validation, deployment, monitoring)
+- [x] MLflow kurulumu ve local UI başlatmayı öğren
+- [x] Sklearn ile küçük bir model eğitip log_params, log_metrics ile izlemeyi dene
+- [x] Modelin farklı versiyonlarını karşılaştır
+- [x] mlflow.log_artifact() ile model ve görselleri kaydet
+- [x] MLflow UI üzerinden geçmiş deneyleri analiz et
+- [x] Docker ile MLOps pipeline'ı containerize et
+- [x] Model deployment ve monitoring süreçlerini otomatize et
+
+**Proje:** [iris-mlops-project](./iris-mlops-project/)
 
 ### 🔄 Hafta 4: LLM Tabanlı RAG Sistemi Kurulumu
 - [ ] RAG (Retrieval-Augmented Generation) mimarisini kavra: Retriever + Generator + Prompt
@@ -72,6 +76,7 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 - **Scikit-learn** - ML algoritmaları
 - **NumPy** - Sayısal işlemler
 - **Pandas** - Veri manipülasyonu
+- **MLflow** - ML experiment tracking ve model management
 
 ### Deployment & DevOps
 - **Docker** - Konteynerleştirme
@@ -80,7 +85,6 @@ Her haftanın amacı, teorik altyapıyı pratiğe dökerek AI Engineer olarak be
 - **GitHub** - Kod hosting
 
 ### Gelecek Teknolojiler
-- **MLflow** - ML deney takibi
 - **LangChain** - LLM entegrasyonu
 - **ChromaDB** - Vektör veritabanı
 - **GitHub Actions** - CI/CD
@@ -99,11 +103,7 @@ ai-engineer-lab/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── README.md
-<<<<<<< HEAD
-├── docker-learning-project/    # Hafta 2: Docker Learning Project
-=======
 ├── docker-learning-project/    # Hafta 2: Docker Deployment
->>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 │   ├── app/
 │   │   ├── main.py
 │   │   ├── models.py
@@ -111,11 +111,8 @@ ai-engineer-lab/
 │   ├── docker/
 │   │   ├── Dockerfile
 │   │   └── docker-compose.yml
-<<<<<<< HEAD
 │   ├── config/
 │   │   └── env.example
-=======
->>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 │   ├── scripts/
 │   │   ├── build.sh
 │   │   ├── run.sh
@@ -123,22 +120,99 @@ ai-engineer-lab/
 │   ├── docs/
 │   │   ├── docker-basics.md
 │   │   └── troubleshooting.md
-<<<<<<< HEAD
 │   ├── requirements.txt
 │   └── README.md
-├── [gelecek-proje-3]/         # Hafta 3: MLflow
+├── iris-mlops-project/         # Hafta 3: MLOps with MLflow
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── training.py
+│   │   └── data_processor.py
+│   ├── data/
+│   │   └── processed/
+│   ├── mlflow/
+│   │   ├── experiments/
+│   │   └── README.md
+│   ├── notebooks/
+│   │   ├── data_exploration.ipynb
+│   │   ├── feature_importance.ipynb
+│   │   └── model_comparison.ipynb
+│   ├── scripts/
+│   │   ├── train_models.sh
+│   │   ├── start_mlflow.sh
+│   │   └── deploy_model.sh
+│   ├── docker/
+│   │   ├── Dockerfile
+│   │   └── docker-compose.yml
+│   ├── docs/
+│   │   ├── api_documentation.md
+│   │   └── mlops_basics.md
+│   ├── requirements.txt
+│   └── README.md
 ├── [gelecek-proje-4]/         # Hafta 4: RAG System
 ├── [gelecek-proje-5]/         # Hafta 5: Agent Systems
 ├── [gelecek-proje-6]/         # Hafta 6: CI/CD
-=======
-│   └── README.md
-├── [gelecek-proje-1]/         # Hafta 3: MLflow
-├── [gelecek-proje-2]/         # Hafta 4: RAG System
-├── [gelecek-proje-3]/         # Hafta 5: Agent Systems
-├── [gelecek-proje-4]/         # Hafta 6: CI/CD
->>>>>>> fdaca2c0aa3c8f9b89adffbbfe594abef5262f88
 └── README.md                   # Bu dosya
 ```
+
+## 🚀 Hızlı Başlangıç
+
+### Iris MLOps Project (Hafta 3)
+```bash
+# Iris MLOps projesini çalıştır
+cd iris-mlops-project
+
+# MLflow UI'ı başlat
+./scripts/start_mlflow.sh
+
+# Model eğitimi
+./scripts/train_models.sh
+
+# Docker ile çalıştır
+docker-compose up -d
+```
+
+### Docker Learning Project (Hafta 2)
+```bash
+# Docker projesini çalıştır
+cd docker-learning-project
+
+# Build ve run
+./scripts/build.sh
+./scripts/run.sh
+```
+
+### Sentiment Analysis API (Hafta 1)
+```bash
+# API'yi çalıştır
+cd sentiment-analysis-api
+python -m uvicorn app.main:app --reload
+```
+
+## 📊 Proje Durumu
+
+| Hafta | Proje | Durum | Teknolojiler |
+|-------|-------|-------|--------------|
+| 1 | Sentiment Analysis API | ✅ Tamamlandı | FastAPI, Scikit-learn |
+| 2 | Docker Learning Project | ✅ Tamamlandı | Docker, Docker Compose |
+| 3 | Iris MLOps Project | ✅ Tamamlandı | MLflow, Docker, Scikit-learn |
+| 4 | RAG System | 🔄 Planlanıyor | LangChain, ChromaDB |
+| 5 | Agent Systems | 🔄 Planlanıyor | OpenAI, LangChain |
+| 6 | CI/CD Pipeline | 🔄 Planlanıyor | GitHub Actions |
+
+## 🎯 Öğrenme Çıktıları
+
+### Hafta 1-3 Tamamlandı ✅
+- **API Tasarımı**: FastAPI ile modern REST API'ler
+- **Docker Containerization**: Microservices deployment
+- **MLOps Pipeline**: MLflow ile experiment tracking
+- **Model Management**: Version control ve deployment
+- **Documentation**: Comprehensive README ve API docs
+
+### Gelecek Haftalar 🔄
+- **RAG Systems**: Retrieval-Augmented Generation
+- **Agent Systems**: Tool integration ve automation
+- **CI/CD**: Automated testing ve deployment
 
 ## 👤 Geliştirici
 
